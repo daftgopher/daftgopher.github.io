@@ -1,69 +1,115 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>EasyReadr</title>
+        <meta name="description" content="A bookmarklet that lets you read print-ready articles more easily ">
+        <meta name="viewport" content="width=device-width">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Daftgopher.github.io : Repo for My Projects" />
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+        
+        <link rel="stylesheet" href="css/main.css">
+        <style>
+          html {
+            background: #e2fbff;
+          }
 
-    <title>Daftgopher.github.io</title>
-  </head>
+          .main-wrapper {
+            width: 960px;
+            text-align: center;
+            margin: 80px auto 40px;
+            font-family: 'Helvetica Neue', helvetica, Arial, sans-serif;
+          }
 
-  <body>
+          p {
+            margin-bottom: 25px;
+          }
+          
+  
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/daftgopher">View on GitHub</a>
+          .button {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 24px;
+            background:                                         #15b8ff;
+            background:    -moz-linear-gradient(180deg, #15b8ff, #2890ff);
+            background: -webkit-linear-gradient(270deg, #15b8ff, #2890ff);
+            background:      -o-linear-gradient(180deg, #15b8ff, #2890ff);
+            background:     -ms-linear-gradient(180deg, #15b8ff, #2890ff);
+            background:      -k-linear-gradient(180deg, #15b8ff, #2890ff);
+            background:         linear-gradient(180deg, #15b8ff, #2890ff);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 10px;
+          }
+        </style>
+        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
-          <h1 id="project_title">Daftgopher.github.io</h1>
-          <h2 id="project_tagline">Repo for My Projects</h2>
+        <!-- Add your site or application content here -->
+        <section id="main" class="main-wrapper">
+          <h1>EasyReadr</h1>
+          <p>Click and drag the button below to your bookmarks toolbar:</p>
+          
+          <a href="javascript:(function(){
+                var wrapper = document.getElementsByClassName('entry-content')[0];
+              var paragraphs = wrapper.getElementsByTagName('p');
+          
+              wrapper.style.width = '650px';
+              wrapper.style.margin = '0 auto';
+              wrapper.style.fontFamily = 'Georgia, serif';
+          
+              for (i=0; i < paragraphs.length; i++) {
+                paragraphs[i].style.fontSize = '24px';
+                paragraphs[i].style.lineHeight = '38px';
+                paragraphs[i].style.marginBottom = '48px';
+              }
+                })();" class="button">EasyReadr</a>
+          
+                <p>Now visit one of those print-version pages on the New York Times and click the bookmark. Bam. Comfortable reading. Here's an <a href="http://opinionator.blogs.nytimes.com/2013/04/29/the-power-of-i-dont-know/?pagewanted=print">example article for you to try out</a></p>
+        </section>
 
-        </header>
-    </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                
+        <script src="js/main.js"></script>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+        <script>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+          function prettify() {
+            var wrapper = document.getElementsByClassName('entry-content')[0] ||
+                    document.getElementById('articleBody');
+            var paragraphs = wrapper.getElementsByTagName('p');
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+            // Grab the heading and create a wrapper div for centering it (Not implemented yet)
+            var heading = document.getElementsByClassName('entry-title')[0];
+            var headingWrapper = document.createElement('div');
+            headingWrapper.id = 'heading-wrapper';
 
-<h3>Designer Templates</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+            //Set the styles
 
-<h3>Rather Drive Stick?</h3>
+            wrapper.style.width = '650px';
+            wrapper.style.margin = '0 auto';
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+            for (i=0; i < paragraphs.length; i++) {
+              paragraphs[i].style.fontSize = '24px';
+              paragraphs[i].style.lineHeight = '38px';
+              paragraphs[i].style.marginBottom = '36px';
+            }
+          }
 
-<h3>Authors and Contributors</h3>
+        </script>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+    </body>
 </html>
