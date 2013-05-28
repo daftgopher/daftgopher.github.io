@@ -90,6 +90,15 @@
         					  document.getElementById('articleBody');
         		var paragraphs = wrapper.getElementsByTagName('p');
 
+
+        		// Grab the heading and create a wrapper div for centering it (Not implemented yet)
+        		var heading = document.getElementsByClassName('entry-title')[0];
+        		var headingWrapper = document.createElement('div');
+        		headingWrapper.id = 'heading-wrapper';
+
+
+        		//Set the styles
+
         		wrapper.style.width = '650px';
         		wrapper.style.margin = '0 auto';
 
@@ -102,12 +111,5 @@
 
         </script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>
