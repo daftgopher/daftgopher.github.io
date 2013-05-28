@@ -15,39 +15,39 @@
         
         <link rel="stylesheet" href="css/main.css">
         <style>
-					html {
-						background: #e2fbff;
-					}
+          html {
+            background: #e2fbff;
+          }
 
-					.main-wrapper {
-						width: 960px;
-						text-align: center;
-						margin: 80px auto 40px;
-						font-family: 'Helvetica Neue', helvetica, Arial, sans-serif;
-					}
+          .main-wrapper {
+            width: 960px;
+            text-align: center;
+            margin: 80px auto 40px;
+            font-family: 'Helvetica Neue', helvetica, Arial, sans-serif;
+          }
 
-					p {
-						margin-bottom: 25px;
-					}
-					
-	
+          p {
+            margin-bottom: 25px;
+          }
+          
+  
 
-					.button {
-						display: inline-block;
-						text-align: center;
-						text-decoration: none;
-						font-size: 24px;
-						background:                                         #15b8ff;
-						background:    -moz-linear-gradient(180deg, #15b8ff, #2890ff);
-						background: -webkit-linear-gradient(270deg, #15b8ff, #2890ff);
-						background:      -o-linear-gradient(180deg, #15b8ff, #2890ff);
-						background:     -ms-linear-gradient(180deg, #15b8ff, #2890ff);
-						background:      -k-linear-gradient(180deg, #15b8ff, #2890ff);
-						background:         linear-gradient(180deg, #15b8ff, #2890ff);
-						color: white;
-						padding: 15px 40px;
-						border-radius: 10px;
-					}
+          .button {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 24px;
+            background:                                         #15b8ff;
+            background:    -moz-linear-gradient(180deg, #15b8ff, #2890ff);
+            background: -webkit-linear-gradient(270deg, #15b8ff, #2890ff);
+            background:      -o-linear-gradient(180deg, #15b8ff, #2890ff);
+            background:     -ms-linear-gradient(180deg, #15b8ff, #2890ff);
+            background:      -k-linear-gradient(180deg, #15b8ff, #2890ff);
+            background:         linear-gradient(180deg, #15b8ff, #2890ff);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 10px;
+          }
         </style>
         
     </head>
@@ -58,25 +58,25 @@
 
         <!-- Add your site or application content here -->
         <section id="main" class="main-wrapper">
-        	<h1>EasyReadr</h1>
-        	<p>Click and drag the button below to your bookmarks toolbar:</p>
-        	
-        	<a href="javascript:(function(){
-        				var wrapper = document.getElementsByClassName('entry-content')[0];
-        			var paragraphs = wrapper.getElementsByTagName('p');
-        	
-        			wrapper.style.width = '650px';
-        			wrapper.style.margin = '0 auto';
-        			wrapper.style.fontFamily = 'Georgia, serif';
-        	
-        			for (i=0; i < paragraphs.length; i++) {
-        				paragraphs[i].style.fontSize = '24px';
-        				paragraphs[i].style.lineHeight = '38px';
-        				paragraphs[i].style.marginBottom = '48px';
-        			}
-        	    	})();" class="button">EasyReadr</a>
-        	
-        	    	<p>Now visit one of those print-version pages on the New York Times and click the bookmark. Bam. Comfortable reading. Here's an <a href="http://opinionator.blogs.nytimes.com/2013/04/29/the-power-of-i-dont-know/?pagewanted=print">example article for you to try out</a></p>
+          <h1>EasyReadr</h1>
+          <p>Click and drag the button below to your bookmarks toolbar:</p>
+          
+          <a href="javascript:(function(){
+                var wrapper = document.getElementsByClassName('entry-content')[0];
+              var paragraphs = wrapper.getElementsByTagName('p');
+          
+              wrapper.style.width = '650px';
+              wrapper.style.margin = '0 auto';
+              wrapper.style.fontFamily = 'Georgia, serif';
+          
+              for (i=0; i < paragraphs.length; i++) {
+                paragraphs[i].style.fontSize = '24px';
+                paragraphs[i].style.lineHeight = '38px';
+                paragraphs[i].style.marginBottom = '48px';
+              }
+                })();" class="button">EasyReadr</a>
+          
+                <p>Now visit one of those print-version pages on the New York Times and click the bookmark. Bam. Comfortable reading. Here's an <a href="http://opinionator.blogs.nytimes.com/2013/04/29/the-power-of-i-dont-know/?pagewanted=print">example article for you to try out</a></p>
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -85,29 +85,29 @@
 
         <script>
 
-        	function prettify() {
-        		var wrapper = document.getElementsByClassName('entry-content')[0] ||
-        					  document.getElementById('articleBody');
-        		var paragraphs = wrapper.getElementsByTagName('p');
+          function prettify() {
+            var wrapper = document.getElementsByClassName('entry-content')[0] ||
+                    document.getElementById('articleBody');
+            var paragraphs = wrapper.getElementsByTagName('p');
 
 
-        		// Grab the heading and create a wrapper div for centering it (Not implemented yet)
-        		var heading = document.getElementsByClassName('entry-title')[0];
-        		var headingWrapper = document.createElement('div');
-        		headingWrapper.id = 'heading-wrapper';
+            // Grab the heading and create a wrapper div for centering it (Not implemented yet)
+            var heading = document.getElementsByClassName('entry-title')[0];
+            var headingWrapper = document.createElement('div');
+            headingWrapper.id = 'heading-wrapper';
 
 
-        		//Set the styles
+            //Set the styles
 
-        		wrapper.style.width = '650px';
-        		wrapper.style.margin = '0 auto';
+            wrapper.style.width = '650px';
+            wrapper.style.margin = '0 auto';
 
-        		for (i=0; i < paragraphs.length; i++) {
-        			paragraphs[i].style.fontSize = '24px';
-        			paragraphs[i].style.lineHeight = '38px';
-        			paragraphs[i].style.marginBottom = '36px';
-        		}
-        	}
+            for (i=0; i < paragraphs.length; i++) {
+              paragraphs[i].style.fontSize = '24px';
+              paragraphs[i].style.lineHeight = '38px';
+              paragraphs[i].style.marginBottom = '36px';
+            }
+          }
 
         </script>
 
