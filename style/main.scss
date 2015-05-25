@@ -1,0 +1,180 @@
+---
+---
+
+// Variables
+
+$font-family-gotham: 'Gotham A', 'Gotham B';
+$font-family-archer: 'Archer A', 'Archer B';
+
+// Start content
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #B0AA83;
+	color: #FDFFDF;
+	display: flex;
+	flex-direction: column;
+	font-family: $font-family-gotham;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1.4;
+	min-height: 100vh;
+}
+
+main {
+	padding: 2em 0;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 80em;
+}
+
+h1, h2, h3 {
+	font-family: $font-family-archer;
+	margin: 0 0 1em;
+}
+
+h4, h5, h6 {
+	font-family: $font-family-archer;
+	font-weight: 700;
+	margin: 0 0 0.5em;
+}
+
+h1.mainTitle {
+	font-size: 4em;
+}
+
+h1 {
+	font-size: 3em;	
+	margin-bottom: 0.5em;
+}
+
+h4 {
+	font-size: 1.6em;
+}
+
+p {
+	margin: 0 0 1em;
+}
+
+.siteHeader {
+	background: #333;
+	height: 30vh;
+	padding: 5em;
+	text-align: center;
+	animation: headerFade 3s infinite;
+}
+
+.siteHeader--main {
+	@extend .siteHeader;
+	height: 45vh;
+	padding: 7em;
+}
+
+.header-subhead {
+	font-size: 2em;
+	font-family: $font-family-archer;
+}
+
+.grid {
+	display: flex;
+}
+
+.grid-cell {
+	margin: 1.5em 1em;
+	width: 100%;
+}
+
+.projectItem {
+	background: #FFF6A1;
+	box-shadow: 6px 8px #7B7862;  
+	color: #333;
+	display: flex;
+	flex-direction: column;
+}
+
+.projectItem-header,
+.projectItem-footer {
+	text-align: center;
+}
+
+.projectItem-header {
+	align-self: flex-top;
+	background: #FFDD56;
+	padding: 0.8em 1em;
+	text-align: center;
+	width: 100%;
+}
+
+.projectItem-content {
+	padding: 0.8em 1em;
+	flex: 1;
+}
+
+.projectItem-footer {
+	align-self: flex-end;
+	padding: 2em;
+	width: 100%;
+}
+
+.projectItem-header > h4 {
+	margin-bottom: 0;
+}
+
+.button--secondary {
+	background: brown;
+	border: 0;
+	box-shadow: 3px 3px 0 #7B3232;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 1em 2em;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.3s;
+
+	&:hover {
+		background: scale-color(brown, $lightness: 20%);
+		box-shadow: 3px 3px 0 scale-color(#7B3232, $lightness: 20%);
+	}
+}
+
+.well {
+	background: #E5D07B;
+	border-radius: 5px;
+	padding: 1em;
+	margin: 0 auto;
+	max-width: 750px;
+}
+
+@keyframes headerFade
+{
+	0% {background: #333}
+	50% {background: #3e3e3e;}
+	100% {background: #333;}
+}
+
+.formcontrol {
+	border-radius: 3px;
+	border: 1px solid #E8E1B1;
+	min-height: 12em;
+	padding: 0.5em;
+	width: 100%;
+}
+
+.siteFooter {
+	background: #333;
+	flex: 1;
+	font-size: 1.2em;
+	padding: 1em 0;
+	text-align: right;
+
+	a {
+		color: currentcolor;
+	}
+}

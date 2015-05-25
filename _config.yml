@@ -1,0 +1,15 @@
+exclude: ['archive/', 'node_modules/', 'gulpfile.js', 'package.json']
+
+defaults:
+  -
+    scope: 
+      path: ""
+      type: "posts"
+    values:
+      layout: "home"
+  -
+    scope:
+      path: "projects"
+      type: "pages"
+    values:
+      layout: "project"
