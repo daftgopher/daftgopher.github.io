@@ -31,7 +31,14 @@ processCase = ->
 			sentence = sentence.replace(/\si(['|\s])/g, ' I$1')
 			newLine.push(sentence)
 		
-		newLine.join('. ')
+		newLine = newLine.join('. ')
+
+		# Capitalize after ?, ! punctuation marks
+		capitalizeAfterPunctuation = (match) ->
+			capital = match.substr(-1).toUpperCase()
+			match.slice(0, -1) + capital;
+
+		newLine.replace(/[\?|!]\s([a-z])/g, capitalizeAfterPunctuation)
 
 	lines = contents.split('\n')
 	lineGroup = []

@@ -25,7 +25,7 @@
     var contents, lineGroup, lines, lowerCaseLine;
     contents = inputTextArea.value;
     lowerCaseLine = function(line) {
-      var newLine;
+      var capitalizeAfterPunctuation, newLine;
       newLine = [];
       line = line.split('. ');
       line.forEach(function(sentence) {
@@ -33,7 +33,13 @@
         sentence = sentence.replace(/\si(['|\s])/g, ' I$1');
         return newLine.push(sentence);
       });
-      return newLine.join('. ');
+      newLine = newLine.join('. ');
+      capitalizeAfterPunctuation = function(match) {
+        var capital;
+        capital = match.substr(-1).toUpperCase();
+        return match.slice(0, -1) + capital;
+      };
+      return newLine.replace(/[\?|!]\s([a-z])/g, capitalizeAfterPunctuation);
     };
     lines = contents.split('\n');
     lineGroup = [];
