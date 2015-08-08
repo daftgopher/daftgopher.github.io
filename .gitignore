@@ -17,3 +17,6 @@ pickle-email-*.html
 /node_modules/
 /archive/
 gulpfile.js
+_site/
+.sass-cache/
+.jekyll-metadata
