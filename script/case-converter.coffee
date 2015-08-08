@@ -24,7 +24,7 @@ processCase = ->
 
 	lowerCaseLine = (line) ->
 		newLine = []
-		line = line.split('. ')
+		line = line.split(/\.\s+/)
 		line.forEach (sentence) ->
 			sentence = sentence.charAt(0).toUpperCase() + sentence.substr(1).toLowerCase()
 			# Replace: " i ", " i've", " i'm"  with uppercase
@@ -33,7 +33,7 @@ processCase = ->
 		
 		newLine = newLine.join('. ')
 
-		# Capitalize after ?, ! punctuation marks
+		# Capitalize first letter after ?, ! punctuation marks
 		capitalizeAfterPunctuation = (match) ->
 			capital = match.substr(-1).toUpperCase()
 			match.slice(0, -1) + capital;
