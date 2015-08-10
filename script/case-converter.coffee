@@ -4,21 +4,6 @@
 inputTextArea = document.querySelectorAll('#converterInput')[0]
 outputTextArea = document.querySelectorAll('#converterOutput')[0]
 
-isEventSupported = (eventName) ->
-	el = document.createElement('div')
-	eventName = 'on' + eventName
-	isSupported = eventName in el
-
-	# Firefox workaround
-	unless isSupported
-		el.setAttribute(eventName, 'return;')
-		isSupported = typeof el[eventName] == 'function'
-
-	el = null;
-	isSupported
-
-supportedEvent = if isEventSupported('paste') then 'paste' else 'blur'
-
 processCase = ->
 	contents = inputTextArea.value.toLowerCase()
 
