@@ -20,33 +20,16 @@ isEventSupported = (eventName) ->
 supportedEvent = if isEventSupported('paste') then 'paste' else 'blur'
 
 processCase = ->
-	contents = inputTextArea.value
+	contents = inputTextArea.value.toLowerCase()
 
-	lowerCaseLine = (line) ->
-		newLine = []
-		line = line.split(/\.\s+/)
-		line.forEach (sentence) ->
-			sentence = sentence.charAt(0).toUpperCase() + sentence.substr(1).toLowerCase()
-			# Replace: " i ", " i've", " i'm"  with uppercase
-			sentence = sentence.replace(/\si(['|\s])/g, ' I$1')
-			newLine.push(sentence)
-		
-		newLine = newLine.join('. ')
+	# 1. Uppercase first letter of each line.
+	outputTextArea.value = contents.replace(/(^[a-z])/gm, (letter) -> letter.toUpperCase())
 
-		# Capitalize first letter after ?, ! punctuation marks
-		capitalizeAfterPunctuation = (match) ->
-			capital = match.substr(-1).toUpperCase()
-			match.slice(0, -1) + capital;
+    # 2. Replace: " i ", " i've", " i'm"  with uppercase
+    .replace(/\si('|\s)/gm, ' I$1')
 
-		newLine.replace(/[\?|!]\s([a-z])/g, capitalizeAfterPunctuation)
-
-	lines = contents.split('\n')
-	lineGroup = []
-
-	lines.forEach (line) ->
-		lineGroup.push(lowerCaseLine(line))
-
-	outputTextArea.value = lineGroup.join('\n')
+    # 3. Uppercase first letter after ". ? !" characters
+    .replace(/(\.|\?|!)\s+[a-z]/gm, (match) -> match.slice(0, -1) + match.substr(-1).toUpperCase())
 	
 inputTextArea.addEventListener('input', processCase, false)
 outputTextArea.addEventListener 'focus', ->
